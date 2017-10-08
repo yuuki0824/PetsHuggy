@@ -19,7 +19,7 @@ class PhotosController < ApplicationController
   end
 
   def list
-    listing = Listing.find(params[:id,])
+    listing = Listing.find(params[:listing_id,])
 
     photos = []
     Photo.where(listing_id: listing.id).each do |photo|
