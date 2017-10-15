@@ -19,12 +19,12 @@ class PhotosController < ApplicationController
   end
 
   def list
-    listing = Listing.find(params[:listing_id,])
+    listing = Listing.find(params[:listing_id])
 
     photos = []
     Photo.where(listing_id: listing.id).each do |photo|
       new_photo = {
-        id: photo_id,
+        id: photo.id,
         name: photo.image_file_name,
         size: photo.image_file_size,
         src: photo.image(:thumb)
